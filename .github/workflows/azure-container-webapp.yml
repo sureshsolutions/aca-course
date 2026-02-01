@@ -1,7 +1,7 @@
 name: ACR - Build and deploy
 
 env:
-  AZURE_WEBAPP_NAME: your-app-name  # set this to the name of your Azure Web App
+  AZURE_WEBAPP_NAME: album-backend-api  # set this to the name of your Azure Web App
 
 on:
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
           password: ${{ secrets.REGISTRY_PASSWORD }}     
           
       - run: |
-            docker build -f ./backend_api/backend_api_csharp/Dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/containerapps-album-api:latest
+            docker build ./backend_api/backend_api_csharp -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/containerapps-album-api:latest
             docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/containerapps-album-api:latest
 
 
