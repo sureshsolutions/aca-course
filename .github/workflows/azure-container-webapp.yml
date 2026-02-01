@@ -1,4 +1,4 @@
-name: ACR : Build and deploy
+name: ACR - Build and deploy
 
 env:
   AZURE_WEBAPP_NAME: your-app-name  # set this to the name of your Azure Web App
