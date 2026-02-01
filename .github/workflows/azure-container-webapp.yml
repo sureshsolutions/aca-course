@@ -46,5 +46,5 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - run: |
-          az containerapp update --name album-api-workflow --resource-group rg-containerapps-github-actions-westeurope --environment aca-environment --image ${{ secrets.REGISTRY_LOGIN_SERVER }}/containerapps-album-api:latest --target-port 3500 --ingress 'internal' --registry-server ${{ secrets.REGISTRY_LOGIN_SERVER }} --user-assigned ${{ secrets.MANAGED_IDENTITY}} --registry-identity ${{ secrets.MANAGED_IDENTITY}} --query properties.configuration.ingress.fqdn  
+          az containerapp create --name album-api-workflow --resource-group rg-containerapps-github-actions-westeurope --environment aca-environment --image ${{secrets.REGISTRY_LOGIN_SERVER}}/containerapps-album-api:latest --target-port 3500 --ingress 'internal' --registry-server ${{ secrets.REGISTRY_LOGIN_SERVER }} --user-assigned ${{ secrets.MANAGED_IDENTITY}} --registry-identity ${{ secrets.MANAGED_IDENTITY}} --query properties.configuration.ingress.fqdn  
     
