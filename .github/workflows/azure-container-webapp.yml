@@ -50,6 +50,7 @@ jobs:
         uses: azure/container-apps-deploy-action@v1
         with:
           containerAppName: album-backend-api
+          managedIdentityClientId: identity-aca-acr-ghaction
           resourceGroup: rg-containerapps-github-actions-westeurope
           imageToDeploy: ${{ secrets.ACR_LOGIN_SERVER }}/containerapps-album-api:latest
   
